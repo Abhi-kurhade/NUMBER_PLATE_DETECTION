@@ -16,8 +16,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # ✅ Load YOLO models
 @st.cache_resource
 def load_models():
-    coco_model = YOLO('./models/yolov8n.pt').to(device)
-    license_plate_detector = YOLO('./models/license_plate_detector.pt').to(device)
+    coco_model = YOLO('./yolov8n.pt').to(device)
+    license_plate_detector = YOLO('./license_plate_detector.pt').to(device)
     return coco_model, license_plate_detector
 
 # ✅ Initialize SORT tracker
